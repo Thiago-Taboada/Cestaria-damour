@@ -1,7 +1,13 @@
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
+const whatsappFab = document.querySelector('.whatsapp-fab');
+
+const updateScrollState = () => {
   nav.classList.toggle('scrolled', window.scrollY > 50);
-});
+  whatsappFab?.classList.toggle('visible', window.scrollY > window.innerHeight);
+};
+
+window.addEventListener('scroll', updateScrollState, { passive: true });
+updateScrollState();
 
 document.querySelector('.menu-toggle')?.addEventListener('click', () => {
   document.querySelector('.nav-links').classList.toggle('open');

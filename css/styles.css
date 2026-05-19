@@ -84,6 +84,36 @@
     .nav-cta:hover { background: var(--rose); }
     .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--wine); }
 
+    .whatsapp-fab {
+      display: none;
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 999;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: white;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      text-decoration: none;
+      opacity: 0;
+      transform: translateY(1rem) scale(0.9);
+      transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+      pointer-events: none;
+    }
+    .whatsapp-fab.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+    .whatsapp-fab:active {
+      transform: scale(0.95);
+      box-shadow: 0 2px 12px rgba(37, 211, 102, 0.35);
+    }
+
     /* HERO */
     .hero {
       min-height: 100vh;
@@ -627,6 +657,7 @@ footer {
     /* MOBILE */
     @media (max-width: 768px) {
       .nav-links { display: none; }
+      .whatsapp-fab { display: flex; }
       .nav-links.open {
         display: flex;
         flex-direction: column;
