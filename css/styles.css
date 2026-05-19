@@ -53,10 +53,17 @@
     }
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 2rem;
       list-style: none;
     }
+    .nav-links li {
+      display: flex;
+      align-items: center;
+    }
     .nav-links a {
+      display: inline-flex;
+      align-items: center;
       color: var(--muted);
       text-decoration: none;
       font-size: 0.9rem;
@@ -65,11 +72,15 @@
     }
     .nav-links a:hover { color: var(--wine); }
     .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
       background: var(--wine);
       color: white !important;
       padding: 0.5rem 1.2rem;
       border-radius: 50px;
     }
+    .nav-cta svg { flex-shrink: 0; }
     .nav-cta:hover { background: var(--rose); }
     .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--wine); }
 
@@ -601,6 +612,9 @@
       margin-bottom: 0.75rem;
     }
     .ig-bio-link:hover { color: #25d366; }
+    .ig-bio-link svg {
+      flex-shrink: 0;
+    }
 
 footer {
       text-align: center;
